@@ -1,0 +1,106 @@
+main
+package edu.ejercicios;
+
+import hijo.scrulMaster;
+
+import java.sql.SQLOutput;
+
+public class Main {
+
+    public  static void  imprime(Empleado emple){
+
+        System.out.println("Objeto.Obtenerdetalles()="+obtenerDetalle());
+    }
+
+    public static void prueba(int dato){
+        system.out.primtln("nada");
+
+    }
+
+
+    public static void  determinarTipo(Empleado emple){
+        if (emple instanceof scrulMaster) {
+            System.out.println("esto viene de scrulmaster");
+        }else if (emple instanceof empleado){
+            System.out.println("esto viene de empleado");
+        } else if (emple instanceof  object) {
+            System.out.println("es cualquier cosa");
+
+        }
+    }
+
+    
+
+
+
+    public static void main(String[] args){
+        empleado em = new empleado( "juan", 3500);
+        system.out.println(em.obenerDetalles());
+
+        scrulMaster sm = new scrulMaster("juan",3000,"desarrollo");
+                Syste.out.println(sm.obtenerDetalles());
+
+
+    }
+
+
+
+
+}
+
+
+
+scrulmaster:
+
+package hijo;
+import.Empleado;
+public class scrulMaster extends Empleado {
+    public  String departamento;
+
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    public scrulMaster(string nombre, double sueldo, String chichito) {
+        super(nombre, sueldo);
+        this.departamento = chichito;
+
+    }
+
+    @Override
+    public String obtenerDetalles(){
+        return "desde hijo nombre:"+this.getNombre()+"sueldo:"+this.getSueldo()+" dire:"+this.getDepartamento();
+
+    }
+
+}
+
+
+empleado:
+
+public class empleado {
+    private string nombre;
+    private double sueldo;
+    public  string direccion;
+
+    public empleado(string nombre, double sueldo) {
+        this.nombre = nombre;
+        this.sueldo = sueldo;
+    }
+}
+
+
+}
+
+public String obtenerDetalles(){
+    return "nombre: "+this.getNombre()+" sueldo:"+this.getsueldo();
+}
+
+@Override
+public String toString(){
+    return nombre;
+        }
